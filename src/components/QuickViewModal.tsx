@@ -44,13 +44,13 @@ export function QuickViewModal({ product, onClose }: QuickViewModalProps) {
             {/* === SCROLLABLE CONTENT === */}
             <div className="flex-1 overflow-y-auto">
               {/* Top: Image Gallery */}
-              <div className="relative bg-gray-50">
+              <div className="relative bg-gray-50 rounded-2xl">
                 {/* Main Image */}
-                <div className="relative aspect-square bg-gray-100">
+                <div className="relative aspect-square bg-gray-100 rounded-2xl">
                   <img
                     src={galleryImages[currentImageIndex]}
                     alt={`${product.name} - Image ${currentImageIndex + 1}`}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover rounded-2xl"
                     onError={(e) => {
                       e.currentTarget.src = `https://placehold.co/600x600/f3f4f6/9ca3af?text=${encodeURIComponent(product.name)}`;
                     }}
@@ -98,10 +98,24 @@ export function QuickViewModal({ product, onClose }: QuickViewModalProps) {
                       </span>
                     </div>
                   )}
+
+                  {/* Dot Indicators */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {galleryImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-all shadow-sm ${currentImageIndex === index
+                          ? 'bg-white w-6'
+                          : 'bg-white/60 hover:bg-white/80'
+                          }`}
+                      />
+                    ))}
+                  </div>
                 </div>
 
                 {/* Thumbnail Gallery */}
-                <div className="flex gap-2 p-4 overflow-x-auto bg-gray-50 border-t border-gray-200">
+                <div className="flex justify-center gap-2 p-4 overflow-x-auto bg-gray-50 border-t border-gray-200">
                   {galleryImages.map((img, index) => (
                     <button
                       key={index}
@@ -213,15 +227,15 @@ export function QuickViewModal({ product, onClose }: QuickViewModalProps) {
             </div>
 
             {/* === FIXED CTA (tidak scroll) === */}
-            <div className="border-t border-gray-100 p-4 lg:p-6 bg-white flex-shrink-0">
+            <div className="border-t border-gray-100 p-2 bg-white flex-shrink-0 flex flex-col items-center rounded-2xl">
               <button
                 onClick={handleWhatsAppContact}
-                className="w-full py-4 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-2xl transition-colors flex items-center justify-center gap-3 shadow-lg"
+                className="w-full max-w-sm py-3 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg"
               >
-                <MessageCircle className="w-6 h-6" />
-                <span className="text-lg">Hubungi Penjual via WhatsApp</span>
+                <MessageCircle className="w-5 h-5" />
+                <span className="text-base font-medium">Hubungi Penjual via WhatsApp</span>
               </button>
-              <p className="text-center text-sm text-gray-500 mt-2">
+              <p className="text-center text-xs text-gray-500 mt-2">
                 Chat langsung dengan penjual untuk info lebih lanjut
               </p>
             </div>
