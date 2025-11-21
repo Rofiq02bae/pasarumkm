@@ -63,8 +63,8 @@ export function MarketplaceFeed({ searchQuery, selectedCategory, onProductClick 
       {/* Product Grid with Mixed Card Types */}
       <div className="space-y-6">
         {/* First Row - Catalog Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {filteredProducts.slice(0, 3).map((product, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
+          {filteredProducts.slice(0, 4).map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ export function MarketplaceFeed({ searchQuery, selectedCategory, onProductClick 
 
         {/* Compact List Cards */}
         <div className="space-y-3">
-          {filteredProducts.slice(3, 6).map((product, index) => (
+          {filteredProducts.slice(4, 7).map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, x: -20 }}
@@ -96,8 +96,8 @@ export function MarketplaceFeed({ searchQuery, selectedCategory, onProductClick 
         </div>
 
         {/* More Catalog Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {filteredProducts.slice(6).map((product, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
+          {filteredProducts.slice(7).map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
