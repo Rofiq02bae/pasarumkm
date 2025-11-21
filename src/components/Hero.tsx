@@ -1,10 +1,11 @@
 import { Search, Package, Store, TrendingUp, Heart } from 'lucide-react';
 import { motion } from 'motion/react';
+import { TrustStrip } from './TrustStrip';
 
-interface HeroProps {
-  setSearchQuery: (query: string) => void;
-  setSelectedCategory: (category: string) => void;
-}
+// interface HeroProps {
+//   setSearchQuery: (query: string) => void;
+//   setSelectedCategory: (category: string) => void;
+// }
 
 const categoryShortcuts = [
   { id: 'fashion', label: 'Fashion', icon: Heart, color: '#FF7A5A' },
@@ -13,13 +14,17 @@ const categoryShortcuts = [
   { id: 'trending', label: 'Trending', icon: TrendingUp, color: '#0F6B66' }
 ];
 
-export function Hero({ setSearchQuery, setSelectedCategory }: HeroProps) {
+export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-[#0F6B66] via-[#0F6B66] to-[#0a5450] text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#FF7A5A] rounded-full blur-3xl" />
+    <section className="relative text-white overflow-hidden">
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="hero.jpg"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       </div>
 
       <div className="relative max-w-[1440px] mx-auto px-4 lg:px-6 py-12 lg:py-20">
@@ -39,7 +44,7 @@ export function Hero({ setSearchQuery, setSelectedCategory }: HeroProps) {
           </motion.div>
 
           {/* Hero Search */}
-          <motion.div
+          {/* <motion.div
             className="mb-8 lg:mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,10 +59,12 @@ export function Hero({ setSearchQuery, setSelectedCategory }: HeroProps) {
                 className="w-full pl-16 pr-6 py-4 lg:py-5 bg-white text-[#111827] rounded-2xl shadow-xl focus:outline-none focus:ring-4 focus:ring-white/30 transition-all"
               />
             </div>
-          </motion.div>
+          </motion.div> */}
+
+
 
           {/* Category Shortcuts */}
-          <motion.div
+          {/* <motion.div
             className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,9 +90,11 @@ export function Hero({ setSearchQuery, setSelectedCategory }: HeroProps) {
                 <p className="text-white">{category.label}</p>
               </motion.button>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
+        <TrustStrip />
       </div>
+
     </section>
   );
 }

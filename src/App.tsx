@@ -31,11 +31,11 @@ export default function App() {
       />
 
       <Hero
-        setSearchQuery={setSearchQuery}
-        setSelectedCategory={setSelectedCategory}
+        // setSearchQuery={setSearchQuery}
+        // setSelectedCategory={setSelectedCategory}
       />
 
-      <TrustStrip />
+      {/* <TrustStrip /> */}
 
       <CategoryCarousel
         selectedCategory={selectedCategory}

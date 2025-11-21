@@ -26,7 +26,7 @@ const features = [
 
 export function TrustStrip() {
   return (
-    <section className="bg-white border-y border-gray-100">
+    <section className="w-full bg-transparent">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-6 py-6 lg:py-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {features.map((feature, index) => (
@@ -38,12 +38,12 @@ export function TrustStrip() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-[#0F6B66]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <feature.icon className="w-6 h-6 lg:w-7 lg:h-7 text-[#0F6B66]" />
+              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0">
+                <feature.icon className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
               </div>
               <div>
-                <h3 className="text-[#111827] mb-1">{feature.title}</h3>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 className="text-white font-medium mb-1">{feature.title}</h3>
+                <p className="text-white/80 text-sm">{feature.description}</p>
               </div>
             </motion.div>
           ))}
