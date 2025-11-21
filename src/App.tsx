@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Topbar } from './components/Topbar';
 import { Hero } from './components/Hero';
-import { TrustStrip } from './components/TrustStrip';
+
 import { CategoryCarousel } from './components/CategoryCarousel';
 import { MarketplaceFeed } from './components/MarketplaceFeed';
 import { QuickViewModal } from './components/QuickViewModal';
@@ -31,11 +31,11 @@ export default function App() {
       />
 
       <Hero
-        // setSearchQuery={setSearchQuery}
-        // setSelectedCategory={setSelectedCategory}
+      // setSearchQuery={setSearchQuery}
+      // setSelectedCategory={setSelectedCategory}
       />
 
-      {/* <TrustStrip /> */}
+
 
       <CategoryCarousel
         selectedCategory={selectedCategory}

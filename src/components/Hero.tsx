@@ -1,4 +1,4 @@
-import { Search, Package, Store, TrendingUp, Heart } from 'lucide-react';
+
 import { motion } from 'motion/react';
 import { TrustStrip } from './TrustStrip';
 
@@ -7,12 +7,7 @@ import { TrustStrip } from './TrustStrip';
 //   setSelectedCategory: (category: string) => void;
 // }
 
-const categoryShortcuts = [
-  { id: 'fashion', label: 'Fashion', icon: Heart, color: '#FF7A5A' },
-  { id: 'food', label: 'Makanan', icon: Package, color: '#0F6B66' },
-  { id: 'crafts', label: 'Kerajinan', icon: Store, color: '#FF7A5A' },
-  { id: 'trending', label: 'Trending', icon: TrendingUp, color: '#0F6B66' }
-];
+
 
 export function Hero() {
   return (
